@@ -29,6 +29,3 @@ task_t deTask(){
     return;
 }
 
-void doTask(task_t task){
-
-}
