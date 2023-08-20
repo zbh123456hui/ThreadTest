@@ -30,5 +30,6 @@ task_t deTask(){
 }
 
 void doTask(task_t task){
+    test
 
 }
