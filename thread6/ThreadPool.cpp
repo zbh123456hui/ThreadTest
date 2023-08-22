@@ -87,11 +87,11 @@ void ThreadPool::worker(void* arg){
         //取出task任务后，就可以在当前线程中执行该任务了
         cout << "thread: " << std::this_thread::get_id() << " start working..." << endl;
         //从任务队列中去除一个任务
+        pool->busyNum++;
         user_t user =pool->bqueue.dequeue();
         for(int i=0;i<10;i++){
             user.task[i].func(user.task[i].arg);
         }
-        pool->busyNum++;
         // 任务执行完毕,忙线程解锁
         cout << "thread: " << std::this_thread::get_id() << " end working..." << endl;
         pool->busyNum--;
